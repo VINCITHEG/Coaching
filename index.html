@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Start your Coaching</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accueil - Start your Coaching</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #007bff, #00c6ff);
       color: white;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
       text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
     }
-    .content {
-      max-width: 500px;
+    .container {
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     }
-    .button {
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.25em;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+    .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
       background-color: #ff6b6b;
       color: white;
       text-decoration: none;
+      padding: 15px 35px;
+      font-size: 1.2em;
       border-radius: 8px;
-      font-size: 18px;
-      transition: background 0.3s;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
     }
-    .button:hover {
+    .btn:hover {
       background-color: #e63946;
     }
   </style>
 </head>
 <body>
-  <div class="content">
+  <div class="container">
     <h1>Start your Coaching</h1>
     <p>Commence aujourd’hui ton accompagnement personnalisé et passe au niveau supérieur.</p>
-    <a href="#" class="button">Je commence</a>
+    <a href="#" class="btn">Je commence</a>
   </div>
 </body>
 </html>
