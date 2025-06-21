@@ -76,15 +76,22 @@
   </section>
 
 <style>
-  #paypal-button-container-P-8NX22352W50340619M4F5CUI {
-    width: 100%;
-    display: flex !important;
-    justify-content: center !important;
+  /* Conteneur centré */
+  #paypal-wrapper {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
+  }
+  /* Limite la largeur du bouton PayPal */
+  #paypal-button-container-P-8NX22352W50340619M4F5CUI > div {
+    max-width: 300px; /* ajuste si besoin */
+    width: 100%;
   }
 </style>
 
-<div id="paypal-button-container-P-8NX22352W50340619M4F5CUI"></div>
+<div id="paypal-wrapper">
+  <div id="paypal-button-container-P-8NX22352W50340619M4F5CUI"></div>
+</div>
 
 <script src="https://www.paypal.com/sdk/js?client-id=ATz7jqElMUdkVCdnOzqlSKp7XSGq2nLnAysZAHkcIbaCzDqqwJb7e5KZyCXPUBnzqcfZJpkoNV_AYQmE&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
 
