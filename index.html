@@ -167,6 +167,85 @@
   </style>
 </head>
 <body>
-  <!-- Contenu HTML ici -->
+  <div id="top-banner">
+    <div class="social-links">
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="lang-switcher">
+      <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="Français" class="flag" onclick="setLanguage('fr')">
+      <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English" class="flag" onclick="setLanguage('en')">
+    </div>
+  </div>
+
+  <header>
+    <img src="Original%20Logo.png" alt="Logo">
+    <p class="animated-text">Get in the best shape of your life.</p>
+    <a href="#start" class="button">Start your Coaching</a>
+  </header>
+
+  <section class="section" id="start">
+    <h2>Créer le besoin</h2>
+    <p>Tu n'es pas satisfait de ton physique actuel ? Tu mérites mieux que ça. C'est le moment de prendre les choses en main.</p>
+  </section>
+
+  <section class="section" id="repondre-au-besoin">
+    <h2>Répondre au besoin</h2>
+    <ul>
+      <li><i class="fas fa-dumbbell"></i> Programme personnalisé (salle ou maison)</li>
+      <li><i class="fas fa-utensils"></i> Suivi nutritionnel adapté</li>
+      <li><i class="fas fa-comments"></i> Accès privé à Messenger Pro 24h/24</li>
+      <li><i class="fas fa-video"></i> 1 appel visio par mois pour faire le point</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Ils m'ont fait confiance</h2>
+    <div>
+      <blockquote>"Grâce à ce coaching, j'ai perdu 10kg et repris confiance en moi."</blockquote>
+      <cite>- Thomas</cite>
+    </div>
+    <div>
+      <blockquote>"Enfin un programme qui s'adapte à moi, pas l'inverse."</blockquote>
+      <cite>- Julien</cite>
+    </div>
+  </section>
+
+  <div id="paypal-wrapper">
+    <div id="paypal-button-container-P-8NX22352W50340619M4F5CUI"></div>
+  </div>
+
+  <section class="section">
+    <h2>Me contacter</h2>
+    <p>Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a></p>
+  </section>
+
+  <footer>
+    © 2025 Megastrength Coaching | Tous droits réservés
+  </footer>
+
+  <script src="https://www.paypal.com/sdk/js?client-id=ATz7jqElMUdkVCdnOzqlSKp7XSGq2nLnAysZAHkcIbaCzDqqwJb7e5KZyCXPUBnzqcfZJpkoNV_AYQmE&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function setLanguage(lang) {
+      alert("Language switched to: " + lang);
+    }
+
+    paypal.Buttons({
+      style: {
+        shape: 'rect',
+        color: 'gold',
+        layout: 'vertical',
+        label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          plan_id: 'P-8NX22352W50340619M4F5CUI'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID);
+      }
+    }).render('#paypal-button-container-P-8NX22352W50340619M4F5CUI');
+  </script>
 </body>
 </html>
