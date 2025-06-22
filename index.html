@@ -2,70 +2,77 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Megastrength Coaching</title>
-  <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    :root {
+      --primary-color: #ff6347;
+      --dark-bg: #111;
+      --text-color: #fff;
+      --light-bg: #f4f4f4;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: var(--light-bg);
       color: #333;
     }
-    /* Bandeau fixe en haut */
+
     #top-banner {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      background-color: #111;
-      color: white;
+      background-color: var(--dark-bg);
+      color: var(--text-color);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0.5rem 1rem;
       z-index: 1000;
       font-size: 0.9rem;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid #fff;
     }
+
     #top-banner .social-links, #top-banner .lang-switcher {
       display: flex;
       gap: 15px;
       align-items: center;
     }
-    #top-banner .lang-switcher {
-      margin-right: 20px;
-    }
+
     #top-banner img.flag {
       width: 24px;
       height: 16px;
       cursor: pointer;
       border-radius: 2px;
-      border: 2px solid #111;
+      border: 2px solid var(--dark-bg);
       transition: border-color 0.3s ease;
     }
+
     #top-banner img.flag:hover {
-      border-color: #ff6347;
+      border-color: var(--primary-color);
     }
+
     #top-banner a.social-icon {
-      color: white;
+      color: var(--text-color);
       font-size: 20px;
       text-decoration: none;
       transition: color 0.3s ease;
     }
+
     #top-banner a.social-icon:hover {
-      color: #ff6347;
+      color: var(--primary-color);
     }
 
     header {
-      background-color: #111;
-      color: #fff;
-      padding: 4rem 2rem 2rem 2rem;
+      background-color: var(--dark-bg);
+      color: var(--text-color);
+      padding: 4rem 2rem 2rem;
       text-align: center;
-      position: relative;
       margin-top: 38px;
     }
+
     header img {
       max-width: 200px;
       height: auto;
@@ -73,53 +80,55 @@
       opacity: 0;
       animation: fadeInLogo 2s forwards;
     }
+
     @keyframes fadeInLogo {
       to {
         opacity: 1;
       }
     }
+
     header p.animated-text {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #fff;
+      color: var(--text-color);
       animation: bounce 3s ease-in-out infinite;
-      margin: 0.5rem 0 0 0;
+      margin: 0.5rem 0 0;
     }
+
     @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
     }
+
     .button {
       display: inline-block;
       margin-top: 1.5rem;
       padding: 0.8rem 1.5rem;
-      background-color: #ff6347;
-      color: #fff;
+      background-color: var(--primary-color);
+      color: var(--text-color);
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
     }
+
     .section {
       padding: 2rem;
       text-align: center;
       max-width: 900px;
-      margin: 0 auto 1rem auto;
-      background-color: white;
+      margin: 0 auto 1rem;
+      background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
     footer {
-      background-color: #111;
+      background-color: var(--dark-bg);
       color: #ccc;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
     }
-    /* Styles listes avec icônes FontAwesome */
+
     #repondre-au-besoin ul {
       list-style: none;
       padding-left: 0;
@@ -128,6 +137,7 @@
       text-align: left;
       font-size: 1.1rem;
     }
+
     #repondre-au-besoin li {
       margin-bottom: 1.2rem;
       display: flex;
@@ -136,17 +146,20 @@
       font-weight: 600;
       color: #222;
     }
+
     #repondre-au-besoin i {
-      color: #ff6347;
+      color: var(--primary-color);
       font-size: 28px;
       min-width: 30px;
       text-align: center;
     }
+
     #paypal-wrapper {
       display: flex;
       justify-content: center;
       margin-top: 20px;
     }
+
     #paypal-button-container-P-8NX22352W50340619M4F5CUI > div {
       max-width: 300px;
       width: 100%;
@@ -154,140 +167,6 @@
   </style>
 </head>
 <body>
-  <div id="top-banner">
-    <div class="social-links">
-      <a href="https://www.instagram.com/toncompte/" target="_blank" class="social-icon" title="Instagram" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/tonprofil/" target="_blank" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </div>
-    <div class="lang-switcher">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Français" id="fr-flag" class="flag" title="Français">
-      <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" id="en-flag" class="flag" title="English">
-    </div>
-  </div>
-
-  <header>
-    <img src="Original%20Logo.png" alt="MegaStrength Logo" />
-    <p class="animated-text" id="main-slogan">Get in the best shape of your life.</p>
-    <a href="#start" class="button" id="start-coaching-btn">Start your Coaching</a>
-  </header>
-
-  <section class="section" id="creer-le-besoin">
-    <h2 data-fr="Créer le besoin" data-en="Create the Need">Créer le besoin</h2>
-    <p data-fr="Tu sais que tu n'es pas satisfait de ton corps ? Il est temps de passer à l'action. Personne ne t'attendra. Sois la meilleure version de toi-même."
-       data-en="You know you're not happy with your body? It's time to take action. No one will wait for you. Be the best version of yourself.">
-      Tu sais que tu n'es pas satisfait de ton corps ? Il est temps de passer à l'action. Personne ne t'attendra. Sois la meilleure version de toi-même.
-    </p>
-  </section>
-
-  <section class="section" id="repondre-au-besoin">
-    <h2 data-fr="Répondre au besoin" data-en="Respond to the Need">Répondre au besoin</h2>
-    <ul>
-      <li><i class="fa-solid fa-dumbbell"></i>
-          <span data-fr="Programme personnalisé adapté salle ou maison" data-en="Personalized program adapted for gym or home">
-            Programme personnalisé adapté salle ou maison
-          </span>
-      </li>
-      <li><i class="fa-solid fa-apple-whole"></i>
-          <span data-fr="Suivi nutritionnel pour perdre du poids et prendre du muscle" data-en="Nutritional follow-up to lose weight and gain muscle">
-            Suivi nutritionnel pour perdre du poids et prendre du muscle
-          </span>
-      </li>
-      <li><i class="fa-brands fa-facebook-messenger"></i>
-          <span data-fr="Accès direct à mon Messenger Pro pour échanger 24/7" data-en="Direct access to my Pro Messenger to chat 24/7">
-            Accès direct à mon Messenger Pro pour échanger 24/7
-          </span>
-      </li>
-      <li><i class="fa-solid fa-video"></i>
-          <span data-fr="1 appel visio par mois pour faire le point et ajuster" data-en="1 video call per month to check-in and adjust">
-            1 appel visio par mois pour faire le point et ajuster
-          </span>
-      </li>
-    </ul>
-  </section>
-
-  <section class="section" id="temoignages">
-    <h2 data-fr="Témoignages" data-en="Testimonials">Témoignages</h2>
-    <p data-fr='"Grâce à ce coaching, j\'ai enfin réussi à perdre ces kilos qui me pesaient depuis des années." - Jean' 
-       data-en='"Thanks to this coaching, I finally managed to lose those kilos that have been weighing me down for years." - Jean'>
-      "Grâce à ce coaching, j'ai enfin réussi à perdre ces kilos qui me pesaient depuis des années." - Jean
-    </p>
-    <p data-fr='"Un suivi au top, toujours dispo pour répondre à mes questions." - Marc'
-       data-en='"Top-level support, always available to answer my questions." - Marc'>
-      "Un suivi au top, toujours dispo pour répondre à mes questions." - Marc
-    </p>
-  </section>
-
-  <div id="paypal-wrapper">
-    <div id="paypal-button-container-P-8NX22352W50340619M4F5CUI"></div>
-  </div>
-
-  <script src="https://www.paypal.com/sdk/js?client-id=ATz7jqElMUdkVCdnOzqlSKp7XSGq2nLnAysZAHkcIbaCzDqqwJb7e5KZyCXPUBnzqcfZJpkoNV_AYQmE&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-
-  <script>
-    paypal.Buttons({
-        style: {
-            shape: 'rect',
-            color: 'gold',
-            layout: 'vertical',
-            label: 'subscribe'
-        },
-        createSubscription: function(data, actions) {
-          return actions.subscription.create({
-            plan_id: 'P-8NX22352W50340619M4F5CUI'
-          });
-        },
-        onApprove: function(data, actions) {
-          alert(data.subscriptionID);
-        }
-    }).render('#paypal-button-container-P-8NX22352W50340619M4F5CUI');
-  </script>
-
-  <section class="section" id="contact">
-    <h2 data-fr="Me contacter" data-en="Contact Me">Me contacter</h2>
-    <p data-fr="Envoyez-moi un email : " data-en="Send me an email: ">
-      Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a>
-    </p>
-  </section>
-
-  <footer>
-    © 2025 Vinci Coaching | Tous droits réservés
-  </footer>
-
-  <script>
-    // Traduction simple en JS (sans toucher au titre principal)
-    const langSwitcherFr = document.getElementById('fr-flag');
-    const langSwitcherEn = document.getElementById('en-flag');
-    const translatables = document.querySelectorAll('[data-fr]');
-
-    function switchLanguage(lang) {
-      translatables.forEach(el => {
-        if(lang === 'fr') {
-          el.textContent = el.getAttribute('data-fr');
-        } else if(lang === 'en') {
-          el.textContent = el.getAttribute('data-en');
-        }
-      });
-
-      // Ne pas toucher au titre principal #main-slogan
-
-      const startBtn = document.getElementById('start-coaching-btn');
-
-      if(lang === 'fr') {
-        startBtn.textContent = "Commence ton Coaching";
-      } else {
-        startBtn.textContent = "Start your Coaching";
-      }
-    }
-
-    langSwitcherFr.addEventListener('click', () => switchLanguage('fr'));
-    langSwitcherEn.addEventListener('click', () => switchLanguage('en'));
-
-    // Initialisation par défaut en français
-    switchLanguage('fr');
-  </script>
+  <!-- Contenu HTML ici -->
 </body>
 </html>
