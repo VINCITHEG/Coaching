@@ -29,6 +29,7 @@
     #top-banner .lang-switcher {
       display: flex;
       gap: 10px;
+      margin-right: 20px; /* <-- Décalage vers la gauche */
     }
     #top-banner img {
       width: 24px;
@@ -57,7 +58,7 @@
     header p.animated-text {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #ff6347;
+      color: #fff; /* titre blanc */
       animation: pulse 3s ease-in-out infinite;
       margin: 0.5rem 0 0 0;
     }
@@ -193,7 +194,9 @@
 
   <section class="section" id="contact">
     <h2 data-fr="Me contacter" data-en="Contact Me">Me contacter</h2>
-    <p data-fr="Envoyez-moi un email : " data-en="Send me an email: ">Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a></p>
+    <p data-fr="Envoyez-moi un email : " data-en="Send me an email: ">
+      Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a>
+    </p>
   </section>
 
   <footer>
@@ -201,7 +204,7 @@
   </footer>
 
   <script>
-    // Traduction simple en JS
+    // Traduction simple en JS (sans toucher au titre principal)
     const langSwitcherFr = document.getElementById('fr-flag');
     const langSwitcherEn = document.getElementById('en-flag');
     const translatables = document.querySelectorAll('[data-fr]');
@@ -215,15 +218,13 @@
         }
       });
 
-      // Changer aussi le bouton principal et slogan
-      const mainSlogan = document.getElementById('main-slogan');
+      // Ne pas toucher au titre principal #main-slogan
+
       const startBtn = document.getElementById('start-coaching-btn');
 
       if(lang === 'fr') {
-        mainSlogan.textContent = "Mets-toi en meilleure forme de ta vie.";
         startBtn.textContent = "Commence ton Coaching";
       } else {
-        mainSlogan.textContent = "Get in the best shape of your life.";
         startBtn.textContent = "Start your Coaching";
       }
     }
