@@ -5,12 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Megastrength Coaching</title>
   <style>
+    /* Bandeau en haut */
+    #top-banner {
+      background-color: #E50914; /* rouge vif */
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Pour que le contenu ne soit pas caché sous le bandeau */
     body {
+      padding-top: 2.5rem; /* adapte selon la hauteur du bandeau */
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       color: #333;
     }
+
     header {
       background-color: #111;
       color: #fff;
@@ -22,23 +39,14 @@
       height: auto;
       margin-bottom: 1rem;
     }
-    /* Animation clé pour fade-in + slide up */
-    @keyframes fadeSlideUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
     header p {
       margin-top: 0.5rem;
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #eee;
-      animation: fadeSlideUp 4s ease forwards; /* Animation ralentie */
+      font-size: 1.2rem;
+      animation: pulse 4s infinite;
     }
     .button {
       display: inline-block;
@@ -64,7 +72,12 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
-    /* Conteneur centré */
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    /* Conteneur centré PayPal */
     #paypal-wrapper {
       display: flex;
       justify-content: center;
@@ -72,16 +85,20 @@
     }
     /* Limite la largeur du bouton PayPal */
     #paypal-button-container-P-8NX22352W50340619M4F5CUI > div {
-      max-width: 300px;
+      max-width: 300px; /* ajuste si besoin */
       width: 100%;
     }
   </style>
 </head>
 <body>
+  <div id="top-banner">
+    Offre spéciale : Coaching perte de poids -10% ce mois-ci !
+  </div>
+
   <header>
     <!-- Logo -->
     <img src="Original%20Logo.png" alt="MegaStrength Logo">
-    <!-- Titre supprimé -->
+    <h1>Megastrength Coaching</h1>
     <p>Get in the best shape of your life.</p>
     <a href="#start" class="button">Start your Coaching</a>
   </header>
@@ -131,3 +148,4 @@
   </footer>
 </body>
 </html>
+
