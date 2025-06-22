@@ -5,34 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Megastrength Coaching</title>
   <style>
-    /* Bandeau en haut */
+    /* Bandeau fixe en haut */
     #top-banner {
-      background-color: #E50914; /* rouge vif */
-      color: white;
-      text-align: center;
-      padding: 0.5rem;
-      font-weight: bold;
-      font-size: 1rem;
       position: fixed;
       top: 0;
       width: 100%;
+      background-color: #111; /* noir */
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      font-size: 1rem;
       z-index: 1000;
+    }
+    #top-banner .message {
+      flex: 1;
+    }
+    #top-banner .flags {
+      display: flex;
+      gap: 10px;
+    }
+    #top-banner .flags img {
+      width: 24px;
+      height: 16px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 3px;
+      transition: border-color 0.3s;
+    }
+    #top-banner .flags img:hover {
+      border-color: #E50914; /* rouge au hover */
     }
 
     /* Pour que le contenu ne soit pas caché sous le bandeau */
     body {
-      padding-top: 2.5rem; /* adapte selon la hauteur du bandeau */
+      padding-top: 2.8rem;
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       color: #333;
     }
-
     header {
       background-color: #111;
       color: #fff;
       padding: 2rem;
       text-align: center;
+      margin-top: 0;
     }
     header img {
       max-width: 200px;
@@ -77,6 +97,7 @@
       50% { opacity: 0.5; }
       100% { opacity: 1; }
     }
+
     /* Conteneur centré PayPal */
     #paypal-wrapper {
       display: flex;
@@ -85,32 +106,35 @@
     }
     /* Limite la largeur du bouton PayPal */
     #paypal-button-container-P-8NX22352W50340619M4F5CUI > div {
-      max-width: 300px; /* ajuste si besoin */
+      max-width: 300px;
       width: 100%;
     }
   </style>
 </head>
 <body>
   <div id="top-banner">
-    Offre spéciale : Coaching perte de poids -10% ce mois-ci !
+    <div class="message" id="banner-message">Offre spéciale : Coaching perte de poids -10% ce mois-ci !</div>
+    <div class="flags">
+      <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="Français" id="flag-fr" />
+      <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" id="flag-en" />
+    </div>
   </div>
 
   <header>
-    <!-- Logo -->
-    <img src="Original%20Logo.png" alt="MegaStrength Logo">
-    <h1>Megastrength Coaching</h1>
-    <p>Get in the best shape of your life.</p>
-    <a href="#start" class="button">Start your Coaching</a>
+    <img src="Original%20Logo.png" alt="MegaStrength Logo" id="logo" />
+    <h1 id="header-title">Megastrength Coaching</h1>
+    <p id="header-subtitle">Get in the best shape of your life.</p>
+    <a href="#start" class="button" id="header-button">Start your Coaching</a>
   </header>
 
   <section class="section" id="start">
-    <h2>Pourquoi choisir Vinci Coaching ?</h2>
-    <p>Coaching personnalisé, suivi sur mesure, résultats concrets.</p>
+    <h2 id="section1-title">Pourquoi choisir Vinci Coaching ?</h2>
+    <p id="section1-text">Coaching personnalisé, suivi sur mesure, résultats concrets.</p>
   </section>
 
   <section class="section">
-    <h2>Services proposés</h2>
-    <p>Renforcement musculaire, perte de poids, préparation physique, santé globale.</p>
+    <h2 id="section2-title">Services proposés</h2>
+    <p id="section2-text">Renforcement musculaire, perte de poids, préparation physique, santé globale.</p>
   </section>
 
   <div id="paypal-wrapper">
@@ -137,15 +161,70 @@
         }
     }).render('#paypal-button-container-P-8NX22352W50340619M4F5CUI');
   </script>
-  
+
   <section class="section">
-    <h2>Me contacter</h2>
-    <p>Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a></p>
+    <h2 id="contact-title">Me contacter</h2>
+    <p id="contact-text">Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a></p>
   </section>
 
-  <footer>
+  <footer id="footer-text">
     © 2025 Vinci Coaching | Tous droits réservés
   </footer>
+
+  <script>
+    // Textes en français et anglais
+    const translations = {
+      fr: {
+        bannerMessage: "Offre spéciale : Coaching perte de poids -10% ce mois-ci !",
+        headerTitle: "Megastrength Coaching",
+        headerSubtitle: "Get in the best shape of your life.",
+        headerButton: "Start your Coaching",
+        section1Title: "Pourquoi choisir Vinci Coaching ?",
+        section1Text: "Coaching personnalisé, suivi sur mesure, résultats concrets.",
+        section2Title: "Services proposés",
+        section2Text: "Renforcement musculaire, perte de poids, préparation physique, santé globale.",
+        contactTitle: "Me contacter",
+        contactText: 'Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a>',
+        footerText: "© 2025 Vinci Coaching | Tous droits réservés"
+      },
+      en: {
+        bannerMessage: "Special offer: Weight loss coaching 10% off this month!",
+        headerTitle: "Megastrength Coaching",
+        headerSubtitle: "Get in the best shape of your life.",
+        headerButton: "Start your Coaching",
+        section1Title: "Why choose Vinci Coaching?",
+        section1Text: "Personalized coaching, tailored follow-up, real results.",
+        section2Title: "Services offered",
+        section2Text: "Muscle strengthening, weight loss, physical preparation, overall health.",
+        contactTitle: "Contact me",
+        contactText: 'Send me an email: <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a>',
+        footerText: "© 2025 Vinci Coaching | All rights reserved"
+      }
+    };
+
+    // Fonction pour changer la langue
+    function setLanguage(lang) {
+      document.getElementById("banner-message").textContent = translations[lang].bannerMessage;
+      document.getElementById("header-title").textContent = translations[lang].headerTitle;
+      document.getElementById("header-subtitle").textContent = translations[lang].headerSubtitle;
+      document.getElementById("header-button").textContent = translations[lang].headerButton;
+      document.getElementById("section1-title").textContent = translations[lang].section1Title;
+      document.getElementById("section1-text").textContent = translations[lang].section1Text;
+      document.getElementById("section2-title").textContent = translations[lang].section2Title;
+      document.getElementById("section2-text").textContent = translations[lang].section2Text;
+      document.getElementById("contact-title").textContent = translations[lang].contactTitle;
+      document.getElementById("contact-text").innerHTML = translations[lang].contactText;
+      document.getElementById("footer-text").textContent = translations[lang].footerText;
+    }
+
+    // Événements click sur les drapeaux
+    document.getElementById("flag-fr").addEventListener("click", () => setLanguage("fr"));
+    document.getElementById("flag-en").addEventListener("click", () => setLanguage("en"));
+
+    // Langue par défaut
+    setLanguage("fr");
+  </script>
 </body>
 </html>
+
 
