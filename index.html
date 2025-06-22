@@ -5,12 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Megastrength Coaching</title>
   <style>
-    /* Bandeau fixe en haut */
+    body {
+      padding-top: 2.8rem;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Bandeau fixe */
     #top-banner {
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #111; /* noir */
+      background-color: #111;
       color: white;
       display: flex;
       justify-content: space-between;
@@ -20,54 +28,37 @@
       font-size: 1rem;
       z-index: 1000;
     }
-    #top-banner .message {
-      flex: 1;
-    }
     #top-banner .flags {
       display: flex;
       gap: 10px;
-      padding-right: 25px; /* Décale davantage les drapeaux vers la gauche */
+      padding-right: 25px;
     }
     #top-banner .flags img {
       width: 24px;
       height: 16px;
       cursor: pointer;
-      border: 2px solid #111; /* bordure de la couleur du fond */
+      border: 2px solid #111;
       border-radius: 4px;
-      overflow: hidden;
-      display: block;
       object-fit: cover;
       transition: border-color 0.3s;
     }
     #top-banner .flags img:hover {
-      border-color: #E50914; /* rouge au hover */
+      border-color: #E50914;
     }
 
-    /* Pour que le contenu ne soit pas caché sous le bandeau */
-    body {
-      padding-top: 2.8rem;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    
-    /* Header avec logo, texte animé et bouton centrés et espacement */
     header {
       background-color: #111;
       color: #fff;
       padding: 2rem;
       text-align: center;
-      margin-top: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem; /* espace vertical entre éléments */
+      gap: 1rem;
     }
     header img {
       max-width: 200px;
       height: auto;
-      margin: 0;
     }
     header p {
       font-size: 2.5rem;
@@ -78,7 +69,6 @@
     }
     .button {
       display: inline-block;
-      margin-top: 0;
       padding: 0.8rem 1.5rem;
       background-color: #ff6347;
       color: #fff;
@@ -88,14 +78,8 @@
     }
 
     @keyframes bounceScale {
-      0%, 100% {
-        transform: scale(1);
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-      }
-      50% {
-        transform: scale(1.15);
-        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-      }
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
     }
 
     .section {
@@ -113,13 +97,23 @@
       font-size: 0.9rem;
     }
 
-    /* Conteneur centré PayPal */
+    /* Fade-in Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Paypal */
     #paypal-wrapper {
       display: flex;
       justify-content: center;
       margin-top: 20px;
     }
-    /* Limite la largeur du bouton PayPal */
     #paypal-button-container-P-8NX22352W50340619M4F5CUI > div {
       max-width: 300px;
       width: 100%;
@@ -127,8 +121,9 @@
   </style>
 </head>
 <body>
+
   <div id="top-banner">
-    <div class="message" id="banner-message">Offre spéciale : Coaching perte de poids -10% ce mois-ci !</div>
+    <div id="banner-message">Offre spéciale : Coaching perte de poids -10% ce mois-ci !</div>
     <div class="flags">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png" alt="Français" id="flag-fr" />
       <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" id="flag-en" />
@@ -136,107 +131,55 @@
   </div>
 
   <header>
-    <img src="Original%20Logo.png" alt="MegaStrength Logo" id="logo" />
-    <p id="header-subtitle">Get in the best shape of your life.</p>
-    <a href="#start" class="button" id="header-button">Start your Coaching</a>
+    <img src="Original%20Logo.png" alt="MegaStrength Logo">
+    <p>Get in the best shape of your life.</p>
+    <a href="#start" class="button">Start your Coaching</a>
   </header>
 
-  <section class="section" id="start">
-    <h2 id="section1-title">Pourquoi choisir Vinci Coaching ?</h2>
-    <p id="section1-text">Coaching personnalisé, suivi sur mesure, résultats concrets.</p>
+  <section class="section fade-in" id="argumentaire">
+    <h2>Pas de génétique. Pas d'excuses.</h2>
+    <p>
+      Si t’es encore gras, c’est que personne t’a vraiment appris comment faire.<br><br>
+      Ici, je t’explique étape par étape comment transformer ton corps, même si t’es nul en sport.<br><br>
+      ➔ Tu cliques. Tu appliques. Tu changes.
+    </p>
   </section>
 
   <section class="section">
-    <h2 id="section2-title">Services proposés</h2>
-    <p id="section2-text">Renforcement musculaire, perte de poids, préparation physique, santé globale.</p>
+    <h2>Services proposés</h2>
+    <p>Renforcement musculaire, perte de poids, préparation physique, santé globale.</p>
   </section>
 
   <div id="paypal-wrapper">
     <div id="paypal-button-container-P-8NX22352W50340619M4F5CUI"></div>
   </div>
 
-  <script src="https://www.paypal.com/sdk/js?client-id=ATz7jqElMUdkVCdnOzqlSKp7XSGq2nLnAysZAHkcIbaCzDqqwJb7e5KZyCXPUBnzqcfZJpkoNV_AYQmE&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-
+  <script src="https://www.paypal.com/sdk/js?client-id=ATz7jqElMUdkVCdnOzqlSKp7xSGq2nLnAysZAHkcIbaCzDqqwJb7e5KZyCXPUBnzqcfZJpkoNV_AYQmE&vault=true&intent=subscription"></script>
   <script>
     paypal.Buttons({
-        style: {
-            shape: 'rect',
-            color: 'gold',
-            layout: 'vertical',
-            label: 'subscribe'
-        },
-        createSubscription: function(data, actions) {
-          return actions.subscription.create({
-            plan_id: 'P-8NX22352W50340619M4F5CUI'
-          });
-        },
-        onApprove: function(data, actions) {
-          alert(data.subscriptionID);
-        }
+      style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'subscribe' },
+      createSubscription: (data, actions) => actions.subscription.create({ plan_id: 'P-8NX22352W50340619M4F5CUI' }),
+      onApprove: (data) => alert(data.subscriptionID)
     }).render('#paypal-button-container-P-8NX22352W50340619M4F5CUI');
   </script>
 
   <section class="section">
-    <h2 id="contact-title">Me contacter</h2>
-    <p id="contact-text">Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a></p>
+    <h2>Me contacter</h2>
+    <p>Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a></p>
   </section>
 
-  <footer id="footer-text">
+  <footer>
     © 2025 Vinci Coaching | Tous droits réservés
   </footer>
 
   <script>
-    // Textes en français et anglais
-    const translations = {
-      fr: {
-        bannerMessage: "Offre spéciale : Coaching perte de poids -10% ce mois-ci !",
-        headerTitle: "Megastrength Coaching",
-        headerSubtitle: "Get in the best shape of your life.",
-        headerButton: "Start your Coaching",
-        section1Title: "Pourquoi choisir Vinci Coaching ?",
-        section1Text: "Coaching personnalisé, suivi sur mesure, résultats concrets.",
-        section2Title: "Services proposés",
-        section2Text: "Renforcement musculaire, perte de poids, préparation physique, santé globale.",
-        contactTitle: "Me contacter",
-        contactText: 'Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a>',
-        footerText: "© 2025 Vinci Coaching | Tous droits réservés"
-      },
-      en: {
-        bannerMessage: "Special offer: Weight loss coaching 10% off this month!",
-        headerTitle: "Megastrength Coaching",
-        headerSubtitle: "Get in the best shape of your life.",
-        headerButton: "Start your Coaching",
-        section1Title: "Why choose Vinci Coaching?",
-        section1Text: "Personalized coaching, tailored follow-up, real results.",
-        section2Title: "Services offered",
-        section2Text: "Muscle strengthening, weight loss, physical preparation, overall health.",
-        contactTitle: "Contact me",
-        contactText: 'Send me an email: <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a>',
-        footerText: "© 2025 Vinci Coaching | All rights reserved"
-      }
-    };
+    const fadeIns = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.2 });
 
-    // Fonction pour changer la langue
-    function setLanguage(lang) {
-      document.getElementById("banner-message").textContent = translations[lang].bannerMessage;
-      document.getElementById("header-title").textContent = translations[lang].headerTitle;
-      document.getElementById("header-subtitle").textContent = translations[lang].headerSubtitle;
-      document.getElementById("header-button").textContent = translations[lang].headerButton;
-      document.getElementById("section1-title").textContent = translations[lang].section1Title;
-      document.getElementById("section1-text").textContent = translations[lang].section1Text;
-      document.getElementById("section2-title").textContent = translations[lang].section2Title;
-      document.getElementById("section2-text").textContent = translations[lang].section2Text;
-      document.getElementById("contact-title").textContent = translations[lang].contactTitle;
-      document.getElementById("contact-text").innerHTML = translations[lang].contactText;
-      document.getElementById("footer-text").textContent = translations[lang].footerText;
-    }
-
-    // Événements click sur les drapeaux
-    document.getElementById("flag-fr").addEventListener("click", () => setLanguage("fr"));
-    document.getElementById("flag-en").addEventListener("click", () => setLanguage("en"));
-
-    // Langue par défaut
-    setLanguage("fr");
+    fadeIns.forEach(fadeEl => observer.observe(fadeEl));
   </script>
+
 </body>
 </html>
