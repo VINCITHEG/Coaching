@@ -22,19 +22,22 @@
       background-color: #111;
       color: white;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
       padding: 0.5rem 1rem;
       z-index: 1000;
       font-size: 0.9rem;
       border-bottom: 1px solid white;
     }
-    #top-banner .lang-switcher {
+    #top-banner .social-links, #top-banner .lang-switcher {
       display: flex;
-      gap: 10px;
+      gap: 15px;
+      align-items: center;
+    }
+    #top-banner .lang-switcher {
       margin-right: 20px;
     }
-    #top-banner img {
+    #top-banner img.flag {
       width: 24px;
       height: 16px;
       cursor: pointer;
@@ -42,8 +45,17 @@
       border: 2px solid #111;
       transition: border-color 0.3s ease;
     }
-    #top-banner img:hover {
+    #top-banner img.flag:hover {
       border-color: #ff6347;
+    }
+    #top-banner a.social-icon {
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    #top-banner a.social-icon:hover {
+      color: #ff6347;
     }
 
     header {
@@ -136,9 +148,17 @@
 </head>
 <body>
   <div id="top-banner">
+    <div class="social-links">
+      <a href="https://www.instagram.com/toncompte/" target="_blank" class="social-icon" title="Instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/tonprofil/" target="_blank" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
     <div class="lang-switcher">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Français" id="fr-flag" title="Français">
-      <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" id="en-flag" title="English">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Français" id="fr-flag" class="flag" title="Français">
+      <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" id="en-flag" class="flag" title="English">
     </div>
   </div>
 
