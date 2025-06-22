@@ -119,3 +119,124 @@
       justify-content: center;
       margin-top: 20px;
     }
+    /* Limite la largeur du bouton PayPal */
+    #paypal-button-container-P-8NX22352W50340619M4F5CUI > div {
+      max-width: 300px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="top-banner">
+    <div class="message" id="banner-message">Offre spéciale : Coaching perte de poids -10% ce mois-ci !</div>
+    <div class="flags">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png" alt="Français" id="flag-fr" />
+      <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" id="flag-en" />
+    </div>
+  </div>
+
+  <header>
+    <img src="Original%20Logo.png" alt="MegaStrength Logo" id="logo" />
+    <p id="header-subtitle">Get in the best shape of your life.</p>
+    <a href="#start" class="button" id="header-button">Start your Coaching</a>
+  </header>
+
+  <section class="section" id="start">
+    <h2 id="section1-title">Pourquoi choisir Vinci Coaching ?</h2>
+    <p id="section1-text">Coaching personnalisé, suivi sur mesure, résultats concrets.</p>
+  </section>
+
+  <section class="section">
+    <h2 id="section2-title">Services proposés</h2>
+    <p id="section2-text">Renforcement musculaire, perte de poids, préparation physique, santé globale.</p>
+  </section>
+
+  <div id="paypal-wrapper">
+    <div id="paypal-button-container-P-8NX22352W50340619M4F5CUI"></div>
+  </div>
+
+  <script src="https://www.paypal.com/sdk/js?client-id=ATz7jqElMUdkVCdnOzqlSKp7XSGq2nLnAysZAHkcIbaCzDqqwJb7e5KZyCXPUBnzqcfZJpkoNV_AYQmE&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+
+  <script>
+    paypal.Buttons({
+        style: {
+            shape: 'rect',
+            color: 'gold',
+            layout: 'vertical',
+            label: 'subscribe'
+        },
+        createSubscription: function(data, actions) {
+          return actions.subscription.create({
+            plan_id: 'P-8NX22352W50340619M4F5CUI'
+          });
+        },
+        onApprove: function(data, actions) {
+          alert(data.subscriptionID);
+        }
+    }).render('#paypal-button-container-P-8NX22352W50340619M4F5CUI');
+  </script>
+
+  <section class="section">
+    <h2 id="contact-title">Me contacter</h2>
+    <p id="contact-text">Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a></p>
+  </section>
+
+  <footer id="footer-text">
+    © 2025 Vinci Coaching | Tous droits réservés
+  </footer>
+
+  <script>
+    // Textes en français et anglais
+    const translations = {
+      fr: {
+        bannerMessage: "Offre spéciale : Coaching perte de poids -10% ce mois-ci !",
+        headerTitle: "Megastrength Coaching",
+        headerSubtitle: "Get in the best shape of your life.",
+        headerButton: "Start your Coaching",
+        section1Title: "Pourquoi choisir Vinci Coaching ?",
+        section1Text: "Coaching personnalisé, suivi sur mesure, résultats concrets.",
+        section2Title: "Services proposés",
+        section2Text: "Renforcement musculaire, perte de poids, préparation physique, santé globale.",
+        contactTitle: "Me contacter",
+        contactText: 'Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a>',
+        footerText: "© 2025 Vinci Coaching | Tous droits réservés"
+      },
+      en: {
+        bannerMessage: "Special offer: Weight loss coaching 10% off this month!",
+        headerTitle: "Megastrength Coaching",
+        headerSubtitle: "Get in the best shape of your life.",
+        headerButton: "Start your Coaching",
+        section1Title: "Why choose Vinci Coaching?",
+        section1Text: "Personalized coaching, tailored follow-up, real results.",
+        section2Title: "Services offered",
+        section2Text: "Muscle strengthening, weight loss, physical preparation, overall health.",
+        contactTitle: "Contact me",
+        contactText: 'Send me an email: <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a>',
+        footerText: "© 2025 Vinci Coaching | All rights reserved"
+      }
+    };
+
+    // Fonction pour changer la langue
+    function setLanguage(lang) {
+      document.getElementById("banner-message").textContent = translations[lang].bannerMessage;
+      document.getElementById("header-title").textContent = translations[lang].headerTitle;
+      document.getElementById("header-subtitle").textContent = translations[lang].headerSubtitle;
+      document.getElementById("header-button").textContent = translations[lang].headerButton;
+      document.getElementById("section1-title").textContent = translations[lang].section1Title;
+      document.getElementById("section1-text").textContent = translations[lang].section1Text;
+      document.getElementById("section2-title").textContent = translations[lang].section2Title;
+      document.getElementById("section2-text").textContent = translations[lang].section2Text;
+      document.getElementById("contact-title").textContent = translations[lang].contactTitle;
+      document.getElementById("contact-text").innerHTML = translations[lang].contactText;
+      document.getElementById("footer-text").textContent = translations[lang].footerText;
+    }
+
+    // Événements click sur les drapeaux
+    document.getElementById("flag-fr").addEventListener("click", () => setLanguage("fr"));
+    document.getElementById("flag-en").addEventListener("click", () => setLanguage("en"));
+
+    // Langue par défaut
+    setLanguage("fr");
+  </script>
+</body>
+</html>
