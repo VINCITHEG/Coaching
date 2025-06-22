@@ -26,9 +26,12 @@
       margin: 0;
       font-size: 2.5rem;
     }
+    /* Texte agrandi et un peu plus gras */
     header p {
       margin-top: 0.5rem;
-      font-size: 1.2rem;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #eee;
     }
     .button {
       display: inline-block;
@@ -54,6 +57,17 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+    /* Conteneur centré */
+    #paypal-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    /* Limite la largeur du bouton PayPal */
+    #paypal-button-container-P-8NX22352W50340619M4F5CUI > div {
+      max-width: 300px; /* ajuste si besoin */
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -75,44 +89,30 @@
     <p>Renforcement musculaire, perte de poids, préparation physique, santé globale.</p>
   </section>
 
-<style>
-  /* Conteneur centré */
-  #paypal-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  /* Limite la largeur du bouton PayPal */
-  #paypal-button-container-P-8NX22352W50340619M4F5CUI > div {
-    max-width: 300px; /* ajuste si besoin */
-    width: 100%;
-  }
-</style>
+  <div id="paypal-wrapper">
+    <div id="paypal-button-container-P-8NX22352W50340619M4F5CUI"></div>
+  </div>
 
-<div id="paypal-wrapper">
-  <div id="paypal-button-container-P-8NX22352W50340619M4F5CUI"></div>
-</div>
+  <script src="https://www.paypal.com/sdk/js?client-id=ATz7jqElMUdkVCdnOzqlSKp7XSGq2nLnAysZAHkcIbaCzDqqwJb7e5KZyCXPUBnzqcfZJpkoNV_AYQmE&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
 
-<script src="https://www.paypal.com/sdk/js?client-id=ATz7jqElMUdkVCdnOzqlSKp7XSGq2nLnAysZAHkcIbaCzDqqwJb7e5KZyCXPUBnzqcfZJpkoNV_AYQmE&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-
-<script>
-  paypal.Buttons({
-      style: {
-          shape: 'rect',
-          color: 'gold',
-          layout: 'vertical',
-          label: 'subscribe'
-      },
-      createSubscription: function(data, actions) {
-        return actions.subscription.create({
-          plan_id: 'P-8NX22352W50340619M4F5CUI'
-        });
-      },
-      onApprove: function(data, actions) {
-        alert(data.subscriptionID);
-      }
-  }).render('#paypal-button-container-P-8NX22352W50340619M4F5CUI');
-</script>
+  <script>
+    paypal.Buttons({
+        style: {
+            shape: 'rect',
+            color: 'gold',
+            layout: 'vertical',
+            label: 'subscribe'
+        },
+        createSubscription: function(data, actions) {
+          return actions.subscription.create({
+            plan_id: 'P-8NX22352W50340619M4F5CUI'
+          });
+        },
+        onApprove: function(data, actions) {
+          alert(data.subscriptionID);
+        }
+    }).render('#paypal-button-container-P-8NX22352W50340619M4F5CUI');
+  </script>
   
   <section class="section">
     <h2>Me contacter</h2>
@@ -124,3 +124,5 @@
   </footer>
 </body>
 </html>
+
+ 
