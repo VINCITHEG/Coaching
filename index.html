@@ -32,7 +32,7 @@
       width: 24px;
       height: 16px;
       cursor: pointer;
-      border: none; /* Suppression des bordures */
+      border: 2px solid #111; /* bordure de la couleur du fond */
       border-radius: 3px;
       transition: border-color 0.3s;
     }
@@ -198,6 +198,35 @@
         section2Title: "Services offered",
         section2Text: "Muscle strengthening, weight loss, physical preparation, overall health.",
         contactTitle: "Contact me",
-        contactText: 'Send me an email: <a href="mailto:vinci.coaching
+        contactText: 'Send me an email: <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a>',
+        footerText: "© 2025 Vinci Coaching | All rights reserved"
+      }
+    };
+
+    // Fonction pour changer la langue
+    function setLanguage(lang) {
+      document.getElementById("banner-message").textContent = translations[lang].bannerMessage;
+      document.getElementById("header-title").textContent = translations[lang].headerTitle;
+      document.getElementById("header-subtitle").textContent = translations[lang].headerSubtitle;
+      document.getElementById("header-button").textContent = translations[lang].headerButton;
+      document.getElementById("section1-title").textContent = translations[lang].section1Title;
+      document.getElementById("section1-text").textContent = translations[lang].section1Text;
+      document.getElementById("section2-title").textContent = translations[lang].section2Title;
+      document.getElementById("section2-text").textContent = translations[lang].section2Text;
+      document.getElementById("contact-title").textContent = translations[lang].contactTitle;
+      document.getElementById("contact-text").innerHTML = translations[lang].contactText;
+      document.getElementById("footer-text").textContent = translations[lang].footerText;
+    }
+
+    // Événements click sur les drapeaux
+    document.getElementById("flag-fr").addEventListener("click", () => setLanguage("fr"));
+    document.getElementById("flag-en").addEventListener("click", () => setLanguage("en"));
+
+    // Langue par défaut
+    setLanguage("fr");
+  </script>
+</body>
+</html>
+
 
 
