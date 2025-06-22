@@ -124,6 +124,24 @@
       font-size: 0.9rem;
     }
 
+    /* Titre d’annotation visible style brouillon */
+    .annotation-title {
+      background: #111;
+      color: #ff6347;
+      font-weight: 900;
+      padding: 0.5rem 1rem;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 3rem 0 1rem 0;
+      border-left: 5px solid #ff6347;
+      text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
     /* Conteneur centré PayPal */
     #paypal-wrapper {
       display: flex;
@@ -153,7 +171,8 @@
     <a href="#start" class="button" id="header-button">Start your Coaching</a>
   </header>
 
-  <!-- ======= SECTION : Créer le besoin ======= -->
+  <!-- ======= TITRE VISIBLE : Créer le besoin ======= -->
+  <div class="annotation-title">Créer le besoin</div>
   <section class="section fade-in" id="argumentaire">
     <h2>Pas de génétique. Pas d'excuses.</h2>
     <p>
@@ -163,7 +182,8 @@
     </p>
   </section>
 
-  <!-- ======= SECTION : Répondre au besoin ======= -->
+  <!-- ======= TITRE VISIBLE : Répondre au besoin ======= -->
+  <div class="annotation-title">Répondre au besoin</div>
   <section class="section" id="start">
     <h2>Pourquoi choisir Vinci Coaching ?</h2>
     <p>Coaching personnalisé, suivi sur mesure, résultats concrets.</p>
@@ -222,7 +242,7 @@
 
     fadeIns.forEach(fadeEl => observer.observe(fadeEl));
 
-    // Traduction drapeaux (optionnel, si tu veux garder le système)
+    // Traduction drapeaux (optionnel)
     const translations = {
       fr: {
         bannerMessage: "Offre spéciale : Coaching perte de poids -10% ce mois-ci !",
