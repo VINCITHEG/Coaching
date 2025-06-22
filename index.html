@@ -5,80 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Megastrength Coaching</title>
   <style>
-    /* Bandeau fixe en haut */
-    #top-banner {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #111; /* noir */
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.5rem 1rem;
-      font-weight: bold;
-      font-size: 1rem;
-      z-index: 1000;
-    }
-    #top-banner .message {
-      flex: 1;
-    }
-    #top-banner .flags {
-      display: flex;
-      gap: 10px;
-      padding-right: 25px; /* Décale les drapeaux vers la gauche */
-    }
-    #top-banner .flags img {
-      width: 24px;
-      height: 16px;
-      cursor: pointer;
-      border: 2px solid #111; /* bordure couleur fond */
-      border-radius: 4px;
-      overflow: hidden;
-      display: block;
-      object-fit: cover;
-      transition: border-color 0.3s;
-    }
-    #top-banner .flags img:hover {
-      border-color: #E50914; /* rouge au hover */
-    }
-
-    /* Pour éviter que le contenu soit caché sous le bandeau */
     body {
-      padding-top: 2.8rem;
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       color: #333;
     }
-    
-    /* Header avec logo, texte animé et bouton centrés */
     header {
       background-color: #111;
       color: #fff;
       padding: 2rem;
       text-align: center;
-      margin-top: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+      position: relative;
     }
     header img {
       max-width: 200px;
       height: auto;
-      margin: 0;
+      margin-bottom: 1rem;
     }
-    header p {
+    header p.animated-text {
       font-size: 2.5rem;
       font-weight: bold;
-      animation: bounceScale 2s infinite;
-      display: inline-block;
-      margin: 0;
+      color: #ff6347;
+      animation: pulse 3s ease-in-out infinite;
+      margin: 0.5rem 0 0 0;
+    }
+    @keyframes pulse {
+      0%, 100% {opacity: 1;}
+      50% {opacity: 0.5;}
     }
     .button {
       display: inline-block;
-      margin-top: 0;
+      margin-top: 1.5rem;
       padding: 0.8rem 1.5rem;
       background-color: #ff6347;
       color: #fff;
@@ -86,35 +44,15 @@
       border-radius: 5px;
       font-weight: bold;
     }
-
-    @keyframes bounceScale {
-      0%, 100% {
-        transform: scale(1);
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-      }
-      50% {
-        transform: scale(1.15);
-        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-      }
-    }
-
-    /* Effet fade-in pour le besoin */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     .section {
       padding: 2rem;
       text-align: center;
-    }
-    .section:nth-child(even) {
-      background-color: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     footer {
       background-color: #111;
@@ -123,26 +61,54 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
-
-    /* Titre d’annotation visible style brouillon */
-    .annotation-title {
-      background: #111;
-      color: #ff6347;
-      font-weight: 900;
-      padding: 0.5rem 1rem;
-      font-size: 1.6rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin: 3rem 0 1rem 0;
-      border-left: 5px solid #ff6347;
+    /* Styles pour la section Répondre au besoin */
+    #repondre-au-besoin ul {
+      list-style: none;
+      padding-left: 0;
+      max-width: 600px;
+      margin: 0 auto;
       text-align: left;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.1rem;
     }
+    #repondre-au-besoin li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Logo -->
+    <img src="Original%20Logo.png" alt="MegaStrength Logo">
+    <p class="animated-text">Get in the best shape of your life.</p>
+    <a href="#start" class="button">Start your Coaching</a>
+  </header>
 
-    /* Conteneur centré PayPal */
+  <section class="section" id="creer-le-besoin">
+    <h2>Créer le besoin</h2>
+    <p>Tu sais que tu n'es pas satisfait de ton corps ? Il est temps de passer à l'action. Personne ne t'attendra. Sois la meilleure version de toi-même.</p>
+  </section>
+
+  <section class="section" id="repondre-au-besoin">
+    <h2>Répondre au besoin</h2>
+    <ul>
+      <li>🏋️‍♂️ <strong>Programme personnalisé</strong> adapté salle ou maison</li>
+      <li>🍎 <strong>Suivi nutritionnel</strong> pour perdre du poids et prendre du muscle</li>
+      <li>💬 <strong>Accès direct à mon Messenger Pro</strong> pour échanger 24/7</li>
+      <li>📞 <strong>1 appel visio par mois</strong> pour faire le point et ajuster</li>
+    </ul>
+  </section>
+
+  <section class="section" id="temoignages">
+    <h2>Témoignages</h2>
+    <p>"Grâce à ce coaching, j'ai enfin réussi à perdre ces kilos qui me pesaient depuis des années." - Jean</p>
+    <p>"Un suivi au top, toujours dispo pour répondre à mes questions." - Marc</p>
+  </section>
+
+  <style>
+    /* Conteneur centré pour PayPal */
     #paypal-wrapper {
       display: flex;
       justify-content: center;
@@ -153,82 +119,7 @@
       max-width: 300px;
       width: 100%;
     }
-
-    /* Style témoignages */
-    #preuve-sociale blockquote {
-      background: #eee;
-      border-left: 5px solid #ff6347;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      font-style: italic;
-      color: #333;
-    }
-    #preuve-sociale blockquote footer {
-      font-style: normal;
-      font-weight: bold;
-      margin-top: 0.5rem;
-      color: #ff6347; /* Correction couleur prénom/âge */
-    }
   </style>
-</head>
-<body>
-  <!-- Bandeau fixe en haut -->
-  <div id="top-banner">
-    <div class="message" id="banner-message">Offre spéciale : Coaching perte de poids -10% ce mois-ci !</div>
-    <div class="flags">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png" alt="Français" id="flag-fr" />
-      <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" id="flag-en" />
-    </div>
-  </div>
-
-  <header>
-    <img src="Original%20Logo.png" alt="MegaStrength Logo" id="logo" />
-    <p id="header-subtitle">Get in the best shape of your life.</p>
-    <a href="#start" class="button" id="header-button">Start your Coaching</a>
-  </header>
-
-  <!-- ======= TITRE VISIBLE : Créer le besoin ======= -->
-  <div class="annotation-title">Créer le besoin</div>
-  <section class="section fade-in" id="argumentaire">
-    <h2>Pas de génétique. Pas d'excuses.</h2>
-    <p>
-      Si t’es encore gras, c’est que personne t’a vraiment appris comment faire. <br><br>
-      Ici, je t’explique étape par étape comment transformer ton corps, même si t’es nul en sport.<br><br>
-      ➔ Tu cliques. Tu appliques. Tu changes.
-    </p>
-  </section>
-
-  <!-- ======= TITRE VISIBLE : Répondre au besoin ======= -->
-  <div class="annotation-title">Répondre au besoin</div>
-  <section class="section" id="start">
-    <h2>Pourquoi choisir Vinci Coaching ?</h2>
-    <p>Coaching personnalisé, suivi sur mesure, résultats concrets.</p>
-  </section>
-
-  <!-- ======= TITRE VISIBLE : Preuve sociale ======= -->
-  <div class="annotation-title">Preuve sociale</div>
-  <section class="section fade-in" id="preuve-sociale">
-    <h2>Ils ont transformé leur vie grâce à Megastrength Coaching</h2>
-    <div style="max-width: 800px; margin: auto; text-align: left;">
-      <blockquote>
-        <p>“J’ai perdu 15kg en 4 mois, sans régime draconien. Le coaching est clair, motivant, et adapté.”</p>
-        <footer>- Julien, 34 ans</footer>
-      </blockquote>
-      <blockquote>
-        <p>“Le suivi personnalisé a vraiment fait la différence. Je me sens plus fort et plus confiant.”</p>
-        <footer>- Karim, 29 ans</footer>
-      </blockquote>
-      <blockquote>
-        <p>“Les conseils pratiques m’ont permis de tenir sur la durée. Une vraie méthode pour changer.”</p>
-        <footer>- Thomas, 41 ans</footer>
-      </blockquote>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Services proposés</h2>
-    <p>Renforcement musculaire, perte de poids, préparation physique, santé globale.</p>
-  </section>
 
   <div id="paypal-wrapper">
     <div id="paypal-button-container-P-8NX22352W50340619M4F5CUI"></div>
@@ -254,8 +145,8 @@
         }
     }).render('#paypal-button-container-P-8NX22352W50340619M4F5CUI');
   </script>
-
-  <section class="section">
+  
+  <section class="section" id="contact">
     <h2>Me contacter</h2>
     <p>Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a></p>
   </section>
@@ -263,102 +154,5 @@
   <footer>
     © 2025 Vinci Coaching | Tous droits réservés
   </footer>
-
-  <script>
-    // Effet fade-in au scroll
-    const fadeIns = document.querySelectorAll('.fade-in');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    fadeIns.forEach(fadeEl => observer.observe(fadeEl));
-
-    // Traduction drapeaux
-    const translations = {
-      fr: {
-        bannerMessage: "Offre spéciale : Coaching perte de poids -10% ce mois-ci !",
-        headerSubtitle: "Get in the best shape of your life.",
-        headerButton: "Start your Coaching",
-        argumentaireTitle: "Pas de génétique. Pas d'excuses.",
-        argumentaireText: "Si t’es encore gras, c’est que personne t’a vraiment appris comment faire.\n\nIci, je t’explique étape par étape comment transformer ton corps, même si t’es nul en sport.\n\n➔ Tu cliques. Tu appliques. Tu changes.",
-        section1Title: "Pourquoi choisir Vinci Coaching ?",
-        section1Text: "Coaching personnalisé, suivi sur mesure, résultats concrets.",
-        preuveSocialeTitle: "Ils ont transformé leur vie grâce à Megastrength Coaching",
-        preuveSocialeTest1: "J’ai perdu 15kg en 4 mois, sans régime draconien. Le coaching est clair, motivant, et adapté.",
-        preuveSocialeTest1Auteur: "- Julien, 34 ans",
-        preuveSocialeTest2: "Le suivi personnalisé a vraiment fait la différence. Je me sens plus fort et plus confiant.",
-        preuveSocialeTest2Auteur: "- Karim, 29 ans",
-        preuveSocialeTest3: "Les conseils pratiques m’ont permis de tenir sur la durée. Une vraie méthode pour changer.",
-        preuveSocialeTest3Auteur: "- Thomas, 41 ans",
-        section2Title: "Services proposés",
-        section2Text: "Renforcement musculaire, perte de poids, préparation physique, santé globale.",
-        contactTitle: "Me contacter",
-        contactText: 'Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a>',
-        footerText: "© 2025 Vinci Coaching | Tous droits réservés"
-      },
-      en: {
-        bannerMessage: "Special offer: Weight loss coaching 10% off this month!",
-        headerSubtitle: "Get in the best shape of your life.",
-        headerButton: "Start your Coaching",
-        argumentaireTitle: "No genetics. No excuses.",
-        argumentaireText: "If you're still fat, it's because no one has really taught you how to do it.\n\nHere, I explain step by step how to transform your body, even if you're bad at sports.\n\n➔ You click. You apply. You change.",
-        section1Title: "Why choose Vinci Coaching?",
-        section1Text: "Personalized coaching, tailored follow-up, real results.",
-        preuveSocialeTitle: "They transformed their lives thanks to Megastrength Coaching",
-        preuveSocialeTest1: "I lost 15kg in 4 months, without drastic dieting. The coaching is clear, motivating, and adapted.",
-        preuveSocialeTest1Auteur: "- Julien, 34 years old",
-        preuveSocialeTest2: "The personalized follow-up really made the difference. I feel stronger and more confident.",
-        preuveSocialeTest2Auteur: "- Karim, 29 years old",
-        preuveSocialeTest3: "The practical advice helped me stick to it over time. A real method to change.",
-        preuveSocialeTest3Auteur: "- Thomas, 41 years old",
-        section2Title: "Services offered",
-        section2Text: "Muscle strengthening, weight loss, physical preparation, overall health.",
-        contactTitle: "Contact me",
-        contactText: 'Send me an email: <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a>',
-        footerText: "© 2025 Vinci Coaching | All rights reserved"
-      }
-    };
-
-    function setLanguage(lang) {
-      document.getElementById("banner-message").textContent = translations[lang].bannerMessage;
-      document.getElementById("header-subtitle").textContent = translations[lang].headerSubtitle;
-      document.getElementById("header-button").textContent = translations[lang].headerButton;
-      // Argumentaire
-      document.querySelector("#argumentaire h2").textContent = translations[lang].argumentaireTitle;
-      document.querySelector("#argumentaire p").innerHTML = translations[lang].argumentaireText.replace(/\n/g, "<br><br>");
-      // Section 1
-      document.querySelector("#start h2").textContent = translations[lang].section1Title;
-      document.querySelector("#start p").textContent = translations[lang].section1Text;
-      // Preuve sociale
-      document.querySelector("#preuve-sociale h2").textContent = translations[lang].preuveSocialeTitle;
-      const testimonials = document.querySelectorAll("#preuve-sociale blockquote");
-      testimonials[0].querySelector("p").textContent = translations[lang].preuveSocialeTest1;
-      testimonials[0].querySelector("footer").textContent = translations[lang].preuveSocialeTest1Auteur;
-      testimonials[1].querySelector("p").textContent = translations[lang].preuveSocialeTest2;
-      testimonials[1].querySelector("footer").textContent = translations[lang].preuveSocialeTest2Auteur;
-      testimonials[2].querySelector("p").textContent = translations[lang].preuveSocialeTest3;
-      testimonials[2].querySelector("footer").textContent = translations[lang].preuveSocialeTest3Auteur;
-      // Section 2
-      const servicesSection = document.querySelectorAll(".section")[3];
-      servicesSection.querySelector("h2").textContent = translations[lang].section2Title;
-      servicesSection.querySelector("p").textContent = translations[lang].section2Text;
-      // Contact
-      const contactSection = document.querySelectorAll(".section")[4];
-      contactSection.querySelector("h2").textContent = translations[lang].contactTitle;
-      contactSection.querySelector("p").innerHTML = translations[lang].contactText;
-      // Footer
-      document.querySelector("footer").textContent = translations[lang].footerText;
-    }
-
-    document.getElementById("flag-fr").addEventListener("click", () => setLanguage("fr"));
-    document.getElementById("flag-en").addEventListener("click", () => setLanguage("en"));
-
-    setLanguage("fr");
-  </script>
 </body>
 </html>
