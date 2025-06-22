@@ -153,6 +153,21 @@
       max-width: 300px;
       width: 100%;
     }
+
+    /* Style témoignages */
+    #preuve-sociale blockquote {
+      background: #eee;
+      border-left: 5px solid #ff6347;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    #preuve-sociale blockquote footer {
+      font-style: normal;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      color: #111;
+    }
   </style>
 </head>
 <body>
@@ -187,6 +202,26 @@
   <section class="section" id="start">
     <h2>Pourquoi choisir Vinci Coaching ?</h2>
     <p>Coaching personnalisé, suivi sur mesure, résultats concrets.</p>
+  </section>
+
+  <!-- ======= TITRE VISIBLE : Preuve sociale ======= -->
+  <div class="annotation-title">Preuve sociale</div>
+  <section class="section fade-in" id="preuve-sociale">
+    <h2>Ils ont transformé leur vie grâce à Megastrength Coaching</h2>
+    <div style="max-width: 800px; margin: auto; text-align: left;">
+      <blockquote>
+        <p>“J’ai perdu 15kg en 4 mois, sans régime draconien. Le coaching est clair, motivant, et adapté.”</p>
+        <footer>- Julien, 34 ans</footer>
+      </blockquote>
+      <blockquote>
+        <p>“Le suivi personnalisé a vraiment fait la différence. Je me sens plus fort et plus confiant.”</p>
+        <footer>- Karim, 29 ans</footer>
+      </blockquote>
+      <blockquote>
+        <p>“Les conseils pratiques m’ont permis de tenir sur la durée. Une vraie méthode pour changer.”</p>
+        <footer>- Thomas, 41 ans</footer>
+      </blockquote>
+    </div>
   </section>
 
   <section class="section">
@@ -242,7 +277,7 @@
 
     fadeIns.forEach(fadeEl => observer.observe(fadeEl));
 
-    // Traduction drapeaux (optionnel)
+    // Traduction drapeaux
     const translations = {
       fr: {
         bannerMessage: "Offre spéciale : Coaching perte de poids -10% ce mois-ci !",
@@ -252,6 +287,13 @@
         argumentaireText: "Si t’es encore gras, c’est que personne t’a vraiment appris comment faire.\n\nIci, je t’explique étape par étape comment transformer ton corps, même si t’es nul en sport.\n\n➔ Tu cliques. Tu appliques. Tu changes.",
         section1Title: "Pourquoi choisir Vinci Coaching ?",
         section1Text: "Coaching personnalisé, suivi sur mesure, résultats concrets.",
+        preuveSocialeTitle: "Ils ont transformé leur vie grâce à Megastrength Coaching",
+        preuveSocialeTest1: "J’ai perdu 15kg en 4 mois, sans régime draconien. Le coaching est clair, motivant, et adapté.",
+        preuveSocialeTest1Auteur: "- Julien, 34 ans",
+        preuveSocialeTest2: "Le suivi personnalisé a vraiment fait la différence. Je me sens plus fort et plus confiant.",
+        preuveSocialeTest2Auteur: "- Karim, 29 ans",
+        preuveSocialeTest3: "Les conseils pratiques m’ont permis de tenir sur la durée. Une vraie méthode pour changer.",
+        preuveSocialeTest3Auteur: "- Thomas, 41 ans",
         section2Title: "Services proposés",
         section2Text: "Renforcement musculaire, perte de poids, préparation physique, santé globale.",
         contactTitle: "Me contacter",
@@ -266,6 +308,13 @@
         argumentaireText: "If you're still fat, it's because no one has really taught you how to do it.\n\nHere, I explain step by step how to transform your body, even if you're bad at sports.\n\n➔ You click. You apply. You change.",
         section1Title: "Why choose Vinci Coaching?",
         section1Text: "Personalized coaching, tailored follow-up, real results.",
+        preuveSocialeTitle: "They transformed their lives thanks to Megastrength Coaching",
+        preuveSocialeTest1: "I lost 15kg in 4 months, without drastic dieting. The coaching is clear, motivating, and adapted.",
+        preuveSocialeTest1Auteur: "- Julien, 34 years old",
+        preuveSocialeTest2: "The personalized follow-up really made the difference. I feel stronger and more confident.",
+        preuveSocialeTest2Auteur: "- Karim, 29 years old",
+        preuveSocialeTest3: "The practical advice helped me stick to it over time. A real method to change.",
+        preuveSocialeTest3Auteur: "- Thomas, 41 years old",
         section2Title: "Services offered",
         section2Text: "Muscle strengthening, weight loss, physical preparation, overall health.",
         contactTitle: "Contact me",
@@ -284,12 +333,21 @@
       // Section 1
       document.querySelector("#start h2").textContent = translations[lang].section1Title;
       document.querySelector("#start p").textContent = translations[lang].section1Text;
+      // Preuve sociale
+      document.querySelector("#preuve-sociale h2").textContent = translations[lang].preuveSocialeTitle;
+      const testimonials = document.querySelectorAll("#preuve-sociale blockquote");
+      testimonials[0].querySelector("p").textContent = translations[lang].preuveSocialeTest1;
+      testimonials[0].querySelector("footer").textContent = translations[lang].preuveSocialeTest1Auteur;
+      testimonials[1].querySelector("p").textContent = translations[lang].preuveSocialeTest2;
+      testimonials[1].querySelector("footer").textContent = translations[lang].preuveSocialeTest2Auteur;
+      testimonials[2].querySelector("p").textContent = translations[lang].preuveSocialeTest3;
+      testimonials[2].querySelector("footer").textContent = translations[lang].preuveSocialeTest3Auteur;
       // Section 2
-      const servicesSection = document.querySelectorAll(".section")[2];
+      const servicesSection = document.querySelectorAll(".section")[3];
       servicesSection.querySelector("h2").textContent = translations[lang].section2Title;
       servicesSection.querySelector("p").textContent = translations[lang].section2Text;
       // Contact
-      const contactSection = document.querySelectorAll(".section")[3];
+      const contactSection = document.querySelectorAll(".section")[4];
       contactSection.querySelector("h2").textContent = translations[lang].contactTitle;
       contactSection.querySelector("p").innerHTML = translations[lang].contactText;
       // Footer
