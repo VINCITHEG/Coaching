@@ -67,12 +67,19 @@
       margin-top: 0.5rem;
       font-size: 2.5rem; /* texte plus grand */
       font-weight: bold;
-      animation: pulse 4s infinite;
+      animation-name: pulse;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      display: inline-block; /* indispensable pour animation */
     }
     @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
     }
     .button {
       display: inline-block;
@@ -151,11 +158,4 @@
             layout: 'vertical',
             label: 'subscribe'
         },
-        createSubscription: function(data, actions) {
-          return actions.subscription.create({
-            plan_id: 'P-8NX22352W50340619M4F5CUI'
-          });
-        },
-        onApprove: function(data, actions) {
-          alert(data.subscriptionID);
-        }
+        createSubscription: functi
