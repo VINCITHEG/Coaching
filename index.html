@@ -70,6 +70,13 @@
       max-width: 200px;
       height: auto;
       margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeInLogo 2s forwards;
+    }
+    @keyframes fadeInLogo {
+      to {
+        opacity: 1;
+      }
     }
     header p.animated-text {
       font-size: 2.5rem;
@@ -163,7 +170,7 @@
   </div>
 
   <header>
-    <img src="Original%20Logo.png" alt="MegaStrength Logo">
+    <img src="Original%20Logo.png" alt="MegaStrength Logo" />
     <p class="animated-text" id="main-slogan">Get in the best shape of your life.</p>
     <a href="#start" class="button" id="start-coaching-btn">Start your Coaching</a>
   </header>
