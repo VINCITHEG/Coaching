@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Megastrength Coaching</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
@@ -20,12 +22,12 @@
       background-color: #111;
       color: white;
       display: flex;
-      justify-content: flex-end; /* Plus besoin de texte à gauche */
+      justify-content: flex-end;
       align-items: center;
       padding: 0.5rem 1rem;
       z-index: 1000;
       font-size: 0.9rem;
-      border-bottom: 1px solid white; /* Ligne blanche fine sous le bandeau */
+      border-bottom: 1px solid white;
     }
     #top-banner .lang-switcher {
       display: flex;
@@ -47,10 +49,10 @@
     header {
       background-color: #111;
       color: #fff;
-      padding: 4rem 2rem 2rem 2rem; /* espace en haut pour le bandeau */
+      padding: 4rem 2rem 2rem 2rem;
       text-align: center;
       position: relative;
-      margin-top: 38px; /* pour compenser hauteur du bandeau fixe + ligne */
+      margin-top: 38px;
     }
     header img {
       max-width: 200px;
@@ -86,9 +88,8 @@
       padding: 2rem;
       text-align: center;
       max-width: 900px;
-      margin: 0 auto;
+      margin: 0 auto 1rem auto;
       background-color: white;
-      margin-bottom: 1rem;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
@@ -99,6 +100,7 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+    /* Styles listes avec icônes FontAwesome */
     #repondre-au-besoin ul {
       list-style: none;
       padding-left: 0;
@@ -108,13 +110,18 @@
       font-size: 1.1rem;
     }
     #repondre-au-besoin li {
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
-      gap: 0.7rem;
+      gap: 1rem;
+      font-weight: 600;
+      color: #222;
     }
-    #repondre-au-besoin svg {
-      flex-shrink: 0;
+    #repondre-au-besoin i {
+      color: #ff6347;
+      font-size: 28px;
+      min-width: 30px;
+      text-align: center;
     }
     #paypal-wrapper {
       display: flex;
@@ -152,29 +159,25 @@
   <section class="section" id="repondre-au-besoin">
     <h2 data-fr="Répondre au besoin" data-en="Respond to the Need">Répondre au besoin</h2>
     <ul>
-      <li>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ff6347" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 7h-2V5a3 3 0 0 0-6 0v2H8a1 1 0 0 0-1 1v7a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-7a1 1 0 0 0-1-1zM10 5a1 1 0 0 1 2 0v2h-2V5z"/>
-        </svg>
-        <strong data-fr="Programme personnalisé" data-en="Personalized Program">Programme personnalisé</strong> <span data-fr="adapté salle ou maison" data-en="adapted for gym or home">adapté salle ou maison</span>
+      <li><i class="fa-solid fa-dumbbell"></i>
+          <span data-fr="Programme personnalisé adapté salle ou maison" data-en="Personalized program adapted for gym or home">
+            Programme personnalisé adapté salle ou maison
+          </span>
       </li>
-      <li>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ff6347" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2C8.134 2 5 5.134 5 9c0 2.213 2.5 5.5 7 5.5s7-3.287 7-5.5c0-3.866-3.134-7-7-7zM9 20h6v2H9v-2z"/>
-        </svg>
-        <strong data-fr="Suivi nutritionnel" data-en="Nutritional follow-up">Suivi nutritionnel</strong> <span data-fr="pour perdre du poids et prendre du muscle" data-en="to lose weight and gain muscle">pour perdre du poids et prendre du muscle</span>
+      <li><i class="fa-solid fa-apple-whole"></i>
+          <span data-fr="Suivi nutritionnel pour perdre du poids et prendre du muscle" data-en="Nutritional follow-up to lose weight and gain muscle">
+            Suivi nutritionnel pour perdre du poids et prendre du muscle
+          </span>
       </li>
-      <li>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ff6347" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 2H4a2 2 0 0 0-2 2v16l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/>
-        </svg>
-        <strong data-fr="Accès direct à mon Messenger Pro" data-en="Direct access to my Pro Messenger">Accès direct à mon Messenger Pro</strong> <span data-fr="pour échanger 24/7" data-en="to chat 24/7">pour échanger 24/7</span>
+      <li><i class="fa-brands fa-facebook-messenger"></i>
+          <span data-fr="Accès direct à mon Messenger Pro pour échanger 24/7" data-en="Direct access to my Pro Messenger to chat 24/7">
+            Accès direct à mon Messenger Pro pour échanger 24/7
+          </span>
       </li>
-      <li>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ff6347" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M17 10.5V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3.5l4 4v-11l-4 4z"/>
-        </svg>
-        <strong data-fr="1 appel visio par mois" data-en="1 video call per month">1 appel visio par mois</strong> <span data-fr="pour faire le point et ajuster" data-en="to check-in and adjust">pour faire le point et ajuster</span>
+      <li><i class="fa-solid fa-video"></i>
+          <span data-fr="1 appel visio par mois pour faire le point et ajuster" data-en="1 video call per month to check-in and adjust">
+            1 appel visio par mois pour faire le point et ajuster
+          </span>
       </li>
     </ul>
   </section>
