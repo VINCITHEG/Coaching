@@ -51,39 +51,34 @@
       background-color: #f4f4f4;
       color: #333;
     }
+    
+    /* Header avec logo, texte animé et bouton centrés et espacement */
     header {
       background-color: #111;
       color: #fff;
       padding: 2rem;
       text-align: center;
       margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem; /* espace vertical entre éléments */
     }
     header img {
       max-width: 200px;
       height: auto;
-      margin-bottom: 1rem;
+      margin: 0;
     }
     header p {
-      margin-top: 0.5rem;
-      font-size: 2.5rem; /* texte plus grand */
+      font-size: 2.5rem;
       font-weight: bold;
-      animation-name: pulse;
-      animation-duration: 4s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
-      display: inline-block; /* indispensable pour animation */
-    }
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.5;
-      }
+      animation: bounceScale 2s infinite;
+      display: inline-block;
+      margin: 0;
     }
     .button {
       display: inline-block;
-      margin-top: 1.5rem;
+      margin-top: 0;
       padding: 0.8rem 1.5rem;
       background-color: #ff6347;
       color: #fff;
@@ -91,6 +86,18 @@
       border-radius: 5px;
       font-weight: bold;
     }
+
+    @keyframes bounceScale {
+      0%, 100% {
+        transform: scale(1);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+      50% {
+        transform: scale(1.15);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+
     .section {
       padding: 2rem;
       text-align: center;
@@ -112,50 +119,3 @@
       justify-content: center;
       margin-top: 20px;
     }
-    /* Limite la largeur du bouton PayPal */
-    #paypal-button-container-P-8NX22352W50340619M4F5CUI > div {
-      max-width: 300px;
-      width: 100%;
-    }
-  </style>
-</head>
-<body>
-  <div id="top-banner">
-    <div class="message" id="banner-message">Offre spéciale : Coaching perte de poids -10% ce mois-ci !</div>
-    <div class="flags">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png" alt="Français" id="flag-fr" />
-      <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" id="flag-en" />
-    </div>
-  </div>
-
-  <header>
-    <img src="Original%20Logo.png" alt="MegaStrength Logo" id="logo" />
-    <p id="header-subtitle">Get in the best shape of your life.</p>
-    <a href="#start" class="button" id="header-button">Start your Coaching</a>
-  </header>
-
-  <section class="section" id="start">
-    <h2 id="section1-title">Pourquoi choisir Vinci Coaching ?</h2>
-    <p id="section1-text">Coaching personnalisé, suivi sur mesure, résultats concrets.</p>
-  </section>
-
-  <section class="section">
-    <h2 id="section2-title">Services proposés</h2>
-    <p id="section2-text">Renforcement musculaire, perte de poids, préparation physique, santé globale.</p>
-  </section>
-
-  <div id="paypal-wrapper">
-    <div id="paypal-button-container-P-8NX22352W50340619M4F5CUI"></div>
-  </div>
-
-  <script src="https://www.paypal.com/sdk/js?client-id=ATz7jqElMUdkVCdnOzqlSKp7XSGq2nLnAysZAHkcIbaCzDqqwJb7e5KZyCXPUBnzqcfZJpkoNV_AYQmE&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-
-  <script>
-    paypal.Buttons({
-        style: {
-            shape: 'rect',
-            color: 'gold',
-            layout: 'vertical',
-            label: 'subscribe'
-        },
-        createSubscription: functi
