@@ -20,23 +20,24 @@
       background-color: #111;
       color: white;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end; /* Plus besoin de texte à gauche */
       align-items: center;
       padding: 0.5rem 1rem;
       z-index: 1000;
       font-size: 0.9rem;
+      border-bottom: 1px solid white; /* Ligne blanche fine sous le bandeau */
     }
     #top-banner .lang-switcher {
       display: flex;
       gap: 10px;
-      margin-right: 20px; /* <-- Décalage vers la gauche */
+      margin-right: 20px;
     }
     #top-banner img {
       width: 24px;
       height: 16px;
       cursor: pointer;
       border-radius: 2px;
-      border: 2px solid #111; /* même couleur que le fond */
+      border: 2px solid #111;
       transition: border-color 0.3s ease;
     }
     #top-banner img:hover {
@@ -49,6 +50,7 @@
       padding: 4rem 2rem 2rem 2rem; /* espace en haut pour le bandeau */
       text-align: center;
       position: relative;
+      margin-top: 38px; /* pour compenser hauteur du bandeau fixe + ligne */
     }
     header img {
       max-width: 200px;
@@ -58,13 +60,17 @@
     header p.animated-text {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #fff; /* titre blanc */
-      animation: pulse 3s ease-in-out infinite;
+      color: #fff;
+      animation: bounce 3s ease-in-out infinite;
       margin: 0.5rem 0 0 0;
     }
-    @keyframes pulse {
-      0%, 100% {opacity: 1;}
-      50% {opacity: 0.5;}
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
     }
     .button {
       display: inline-block;
@@ -93,7 +99,6 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
-    /* Styles pour la section Répondre au besoin */
     #repondre-au-besoin ul {
       list-style: none;
       padding-left: 0;
@@ -108,13 +113,11 @@
       align-items: center;
       gap: 0.5rem;
     }
-    /* Conteneur centré pour PayPal */
     #paypal-wrapper {
       display: flex;
       justify-content: center;
       margin-top: 20px;
     }
-    /* Limite la largeur du bouton PayPal */
     #paypal-button-container-P-8NX22352W50340619M4F5CUI > div {
       max-width: 300px;
       width: 100%;
@@ -123,7 +126,6 @@
 </head>
 <body>
   <div id="top-banner">
-    <div>Choisissez votre langue :</div>
     <div class="lang-switcher">
       <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Français" id="fr-flag" title="Français">
       <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" id="en-flag" title="English">
@@ -131,7 +133,6 @@
   </div>
 
   <header>
-    <!-- Logo -->
     <img src="Original%20Logo.png" alt="MegaStrength Logo">
     <p class="animated-text" id="main-slogan">Get in the best shape of your life.</p>
     <a href="#start" class="button" id="start-coaching-btn">Start your Coaching</a>
