@@ -188,17 +188,23 @@
     #start > div:first-child {
       flex: 1;
       min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
     }
 
     #start > div:last-child {
       flex: 1;
       min-width: 280px;
-      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
     }
 
     #start img {
-      max-width: 400px;
+      max-width: 300px;
       width: 100%;
       height: auto;
       border-radius: 8px;
