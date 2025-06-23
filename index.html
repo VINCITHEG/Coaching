@@ -118,18 +118,40 @@
     .section {
       padding: 2rem;
       text-align: center;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto 1rem;
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       opacity: 0;
       animation: fadeInSection 1s forwards;
-      animation-delay: 0.3s;
     }
 
     @keyframes fadeInSection {
       to { opacity: 1; }
+    }
+
+    .section-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .section-text {
+      flex: 1 1 300px;
+      text-align: left;
+    }
+
+    .section-image {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+
+    .section-image img {
+      width: 100%;
+      border-radius: 8px;
     }
 
     footer {
@@ -175,12 +197,22 @@
       max-width: 300px;
       width: 100%;
     }
+
+    @media (max-width: 768px) {
+      .section-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .section-text {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
   <div id="top-banner">
     <div class="social-links">
-      <a href="#" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
       <a href="https://www.linkedin.com/in/vincent-tota-b5bb84257/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
     <div class="lang-switcher">
@@ -195,15 +227,22 @@
     <a href="#creer-le-besoin" class="button">Start your Coaching</a>
   </header>
 
-  <section class="section" id="creer-le-besoin" style="animation-delay: 0.5s;">
-    <h2>Créer le besoin</h2>
-    <p>➡️ Combien de fois tu t'es regardé dans le miroir en pensant : <strong>“Ce n'est pas moi.”</strong></p>
-    <p>➡️ Tu veux que ça change ? Imagine-toi dans 6 mois : un physique que tu assumes, une confiance qui explose.</p>
-    <p>➡️ Mais si tu restes là sans rien faire... devine quoi ? Dans 6 mois, rien n’aura changé.</p>
-    <p><strong>Il est temps d’agir. Maintenant.</strong></p>
+  <section class="section" id="creer-le-besoin" style="animation-delay: 0.3s;">
+    <div class="section-content">
+      <div class="section-text">
+        <h2>Créer le besoin</h2>
+        <p>➡️ Combien de fois tu t'es regardé dans le miroir en pensant : <strong>“Ce n'est pas moi.”</strong></p>
+        <p>➡️ Tu veux que ça change ? Imagine-toi dans 6 mois : un physique que tu assumes, une confiance qui explose.</p>
+        <p>➡️ Mais si tu restes là sans rien faire... devine quoi ? Dans 6 mois, rien n’aura changé.</p>
+        <p><strong>Il est temps d’agir. Maintenant.</strong></p>
+      </div>
+      <div class="section-image">
+        <img src="https://cdn.pixabay.com/photo/2018/03/22/21/35/sad-3251213_960_720.jpg" alt="Personne triste devant un miroir">
+      </div>
+    </div>
   </section>
 
-  <section class="section" id="repondre-au-besoin" style="animation-delay: 0.7s;">
+  <section class="section" id="repondre-au-besoin" style="animation-delay: 0.5s;">
     <h2>Répondre au besoin</h2>
     <ul>
       <li><i class="fas fa-dumbbell"></i> Programme personnalisé (salle ou maison)</li>
@@ -213,7 +252,7 @@
     </ul>
   </section>
 
-  <section class="section" style="animation-delay: 0.9s;">
+  <section class="section" style="animation-delay: 0.7s;">
     <h2>Ils m'ont fait confiance</h2>
     <div>
       <blockquote>"Grâce à ce coaching, j'ai perdu 10kg et repris confiance en moi."</blockquote>
@@ -229,7 +268,7 @@
     <div id="paypal-button-container-P-8NX22352W50340619M4F5CUI"></div>
   </div>
 
-  <section class="section" style="animation-delay: 1.1s;">
+  <section class="section" style="animation-delay: 0.9s;">
     <h2>Me contacter</h2>
     <p>Envoyez-moi un email : <a href="mailto:vinci.coaching@gmail.com">vinci.coaching@gmail.com</a></p>
   </section>
@@ -242,7 +281,7 @@
   <script>
     function setLanguage(lang) {
       alert("Language switched to: " + lang);
-      // Ici tu peux ajouter la logique pour changer le contenu du site
+      // Ici, on ajoutera plus tard la vraie logique de traduction.
     }
 
     paypal.Buttons({
